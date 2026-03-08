@@ -229,20 +229,198 @@ header .search-wrapper button {
     /* A nice modern blue */
 }
 
-/* Fix: Remove white box from empty shop column in news-shop section */
-.news-shop .shop {
-    background: transparent !important;
+/* =====================================================
+   NEWS-SHOP SECTION UPDATES
+   ===================================================== */
+.news-shop {
+    background: #fdfdfd;
+    position: relative;
+    overflow: hidden;
 }
 
-.news-shop .shop:empty,
-.news-shop .col.shop:not(:has(*)) {
-    display: none !important;
+.display-flex-center {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.news-shop .news.col-md-6 {
-    width: 100% !important;
-    max-width: 700px;
+.section-padding {
+    padding: 100px 0;
 }
+
+/* Testimonial Card */
+.testimonial-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 82, 204, 0.08);
+    position: relative;
+    margin-bottom: 50px;
+    border-left: 5px solid #0052cc;
+}
+
+.testimonial-card .quote-icon {
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    background: #0052cc;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.testimonial-card .playfair {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+.client-location {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Modern Title */
+.modern-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #111;
+    line-height: 1.2;
+}
+
+.modern-title span {
+    display: block;
+    color: #0052cc;
+    font-size: 0.8em;
+}
+
+.service-intro-content .sort-about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.secondary-quote {
+    border-left: 3px solid #eee;
+    padding-left: 20px;
+    font-style: italic;
+    color: #555 !important;
+}
+
+/* Modern Button */
+.cta-area {
+    margin-top: 35px;
+}
+
+.modern-btn-primary {
+    background: #0052cc;
+    color: #fff !important;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0, 82, 204, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.modern-btn-primary:hover {
+    background: #0041a3;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 82, 204, 0.4);
+}
+
+.modern-btn-primary i::before {
+    font-size: 1.3em;
+}
+
+/* Showcase Image Wrapper */
+.premium-showcase-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.showcase-img {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-showcase-wrapper:hover .showcase-img {
+    transform: scale(1.05);
+}
+
+.showcase-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-badge .since {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+.showcase-badge .year {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #0052cc;
+}
+
+@media (max-width: 991px) {
+    .news-shop {
+        text-align: center;
+    }
+
+    .testimonial-card {
+        text-align: left;
+    }
+
+    .modern-btn-primary {
+        margin: 0 auto;
+    }
+
+    .premium-showcase-wrapper {
+        margin-top: 50px;
+    }
+
+    .display-flex-center {
+        flex-direction: column;
+    }
+}
+
 
 /* =====================================================
    FEATURE SECTION (.faeture)
