@@ -41,9 +41,7 @@ footer .victoria img {
 
 /* Mobile logo sizes */
 @media (max-width: 768px) {
-    header .navbar-brand img {
-        height: 50px !important;
-    }
+
 
     footer .victoria img {
         max-width: 130px !important;
@@ -189,6 +187,13 @@ header .search-wrapper button {
 }
 
 /* Hero Section Modernization */
+.hero-logo {
+    height: 110px;
+    margin-top: -85px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 #main-hero .title h2 {
     font-size: 4rem;
     font-weight: 800;
@@ -312,14 +317,14 @@ header .search-wrapper button {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: all 0.4s ease;
-    height: 300px;
+    height: 450px;
     background: #fff;
 }
 
 .showcase-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
+    object-fit: contain !important;
     transition: all 0.5s ease;
 }
 
@@ -868,12 +873,14 @@ footer .copyright span {
     }
 }
 
-
-/* ─── INDEX PAGE: Transparent Header on Mobile ─── */
+/* ─── MOBILE GLOBAL: Custom Header Image ─── */
 @media (max-width: 768px) {
+
+    header,
     #home-1 header {
         position: relative !important;
-        background: rgba(0, 0, 0, 0.75) !important;
+        background: url('../images/mobile-header-bg.jpg') no-repeat center center !important;
+        background-size: cover !important;
     }
 
     #home-1 header::before {
@@ -1343,18 +1350,6 @@ footer .copyright span {
         display: block !important;
     }
 
-    header .navbar-brand {
-        float: left !important;
-        margin-left: 15px !important;
-        transform: none !important;
-        left: auto !important;
-        position: relative !important;
-    }
-
-    header .navbar-brand img {
-        height: 45px !important;
-    }
-
     /* Collapsed menu drop down from top */
     header .navbar-collapse {
         background: rgba(20, 20, 30, 0.97) !important;
@@ -1458,8 +1453,27 @@ footer .copyright span {
 /* 3. INDEX: Hero — text box does NOT overflow on small screens */
 @media (max-width: 576px) {
     #main-hero .title {
-        padding: 0 15px !important;
+        padding: 30px 15px 40px !important;
+        /* give inner breathing room */
         width: 100% !important;
+        height: auto !important;
+        /* Prevent text overflow clipping */
+        background-size: cover !important;
+        top: 44% !important;
+        /* Raised slightly to clear the bottom button */
+        transform: translate(-50%, -50%) !important;
+    }
+
+    #main-hero .title>div {
+        margin-top: 0 !important;
+        /* Eliminate original 75px offset */
+    }
+
+    .hero-logo {
+        height: 60px !important;
+        margin-top: -10px !important;
+        /* tighter on mobile */
+        margin-bottom: 15px !important;
     }
 
     #main-hero .title h2 {
@@ -1483,20 +1497,23 @@ footer .copyright span {
     #main-hero a.btn {
         padding: 12px 24px !important;
         font-size: 0.85em !important;
+        bottom: 20px !important;
+        /* Move button lower to clear the text */
     }
 }
 
 /* 4. INDEX: Hero slides — better mobile height */
 @media (max-width: 576px) {
     #home-1 .hero .item {
-        height: 400px !important;
-        min-height: 400px !important;
+        height: 520px !important;
+        min-height: 520px !important;
     }
 }
 
 @media (max-width: 400px) {
     #home-1 .hero .item {
-        height: 350px !important;
+        height: 480px !important;
+        min-height: 480px !important;
     }
 }
 
@@ -1511,18 +1528,27 @@ footer .copyright span {
     }
 }
 
-/* 6. NAVBAR: logo left, toggle right, search icon tucked in */
+/* 6. NAVBAR: Logo left, hamburger right, pure standard layout */
 @media (max-width: 768px) {
+
+    /* Kill Bootstrap clearfix pseudo-elements that break flex spacing */
+    header .navbar-header::before,
+    header .navbar-header::after {
+        display: none !important;
+        content: '' !important;
+    }
+
     header .navbar-header {
         display: flex !important;
+        flex-direction: row-reverse !important;
         align-items: center !important;
         justify-content: space-between !important;
         width: 100% !important;
         position: relative !important;
         left: auto !important;
         transform: none !important;
-        padding: 8px 15px !important;
-        height: auto !important;
+        padding: 5px 0 !important;
+        height: 80px !important;
     }
 
     header .navbar-brand {
@@ -1531,10 +1557,15 @@ footer .copyright span {
         transform: none !important;
         left: auto !important;
         margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     header .navbar-brand img {
-        height: 42px !important;
+        height: 55px !important;
+        width: auto !important;
+        max-width: none !important;
     }
 
     header .navbar-toggle {
@@ -1543,25 +1574,12 @@ footer .copyright span {
         margin: 0 !important;
         border: 1px solid rgba(255, 255, 255, 0.5) !important;
         border-radius: 6px !important;
-        padding: 8px !important;
+        padding: 10px 12px !important;
     }
 
-    /* Search icon — top right absolute */
+    /* Hide the standalone search & extra hamburger on mobile as it muddles the UI */
     header .search-wrapper {
-        position: absolute !important;
-        top: 14px !important;
-        right: 65px !important;
-        z-index: 5;
-    }
-
-    header .search-wrapper ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    header .search-wrapper button {
-        padding: 5px !important;
-        font-size: 1em !important;
+        display: none !important;
     }
 
     /* Collapsed nav menu panel */
