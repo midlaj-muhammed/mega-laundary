@@ -1,0 +1,81 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/06/2016 15:31
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+
+}
+
+.flaticon-bleach:before { content: "\f100"; }
+.flaticon-bleach-1:before { content: "\f101"; }
+.flaticon-bleach-2:before { content: "\f102"; }
+.flaticon-clorine:before { content: "\f103"; }
+.flaticon-degrees:before { content: "\f104"; }
+.flaticon-degrees-1:before { content: "\f105"; }
+.flaticon-degrees-2:before { content: "\f106"; }
+.flaticon-degrees-3:before { content: "\f107"; }
+.flaticon-degrees-4:before { content: "\f108"; }
+.flaticon-degrees-5:before { content: "\f109"; }
+.flaticon-degrees-6:before { content: "\f10a"; }
+.flaticon-degrees-7:before { content: "\f10b"; }
+.flaticon-drain:before { content: "\f10c"; }
+.flaticon-drain-1:before { content: "\f10d"; }
+.flaticon-drip:before { content: "\f10e"; }
+.flaticon-dry:before { content: "\f10f"; }
+.flaticon-dry-1:before { content: "\f110"; }
+.flaticon-dry-2:before { content: "\f111"; }
+.flaticon-dry-3:before { content: "\f112"; }
+.flaticon-dry-4:before { content: "\f113"; }
+.flaticon-dry-5:before { content: "\f114"; }
+.flaticon-dry-6:before { content: "\f115"; }
+.flaticon-drying:before { content: "\f116"; }
+.flaticon-hand-wash:before { content: "\f117"; }
+.flaticon-hand-wash-1:before { content: "\f118"; }
+.flaticon-hang:before { content: "\f119"; }
+.flaticon-iron:before { content: "\f11a"; }
+.flaticon-iron-1:before { content: "\f11b"; }
+.flaticon-iron-2:before { content: "\f11c"; }
+.flaticon-iron-3:before { content: "\f11d"; }
+.flaticon-iron-4:before { content: "\f11e"; }
+.flaticon-iron-5:before { content: "\f11f"; }
+.flaticon-iron-6:before { content: "\f120"; }
+.flaticon-laundry:before { content: "\f121"; }
+.flaticon-solvent:before { content: "\f122"; }
+.flaticon-solvent-1:before { content: "\f123"; }
+.flaticon-solvent-2:before { content: "\f124"; }
+.flaticon-stains:before { content: "\f125"; }
+.flaticon-tumble-dryer:before { content: "\f126"; }
+.flaticon-tumble-dryer-1:before { content: "\f127"; }
+.flaticon-wash:before { content: "\f128"; }
+.flaticon-washing-machine:before { content: "\f129"; }
+.flaticon-washing-machine-1:before { content: "\f12a"; }
+.flaticon-washing-machine-2:before { content: "\f12b"; }
+.flaticon-washing-machine-3:before { content: "\f12c"; }
+.flaticon-washing-program:before { content: "\f12d"; }
+.flaticon-washing-program-1:before { content: "\f12e"; }
+.flaticon-washing-program-2:before { content: "\f12f"; }
+.flaticon-washing-program-3:before { content: "\f130"; }
+.flaticon-wet:before { content: "\f131"; }

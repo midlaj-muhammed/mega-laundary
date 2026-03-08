@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/modern-update.css">
+</head>
+
+<body>
+  <div id="login-box">
+    <div class="left">
+      <div id="mobile1">
+        <h2>Schedule Pickup</h2>
+        <p>Enter your mobile number to continue booking your pick up order.</p>
+        <div id="mobile" style="margin-top: 40px;">
+          <form id="register_form" action="" method="POST">
+            <label for="mobile"></label>
+            <input type="text" name="mobile" placeholder="Eg:05XXXXXXXX" class="required" />
+            <input type="submit" name="signup_submit" value="Book order" />
+          </form>
+        </div>
+      </div>
+      <div id="otp" style="visibility: hidden;">
+        <h2>OTP Verification</h2>
+        <p>Please enter the otp received in your mobile number.</p>
+        <div id="form_otp">
+          <form id="otp_form" action="process1.php" method="POST">
+            <input type="text" name="otp" placeholder="Enter Otp" id="onetime" />
+            <input type="submit" name="otp_verify" value="Verify" />
+          </form>
+        </div><br>
+        <span id="error_otp" style="color:red;visibility: hidden;">Invalid OTP Please Try Again</span>
+      </div>
+    </div>
+    <div class="right">
+      <div id="reg1" style="visibility: hidden;">
+        <h2>Register Now</h2>
+        <p>Complete simple registration to continue booking your pick up order.</p>
+        <div id="reg">
+          <form id="register" action="" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" />
+            <input type="text" name="mobile" placeholder="Enter Mobile" />
+            <input type="text" name="email" placeholder="Enter Email" />
+            <input type="text" name="password" placeholder="Enter Passowrd" />
+            <br><input type="submit" name="reg_sub" value="Register" />
+          </form>
+        </div>
+      </div>
+      <div id="order_form" style="visibility: hidden;">
+        <form id="order_for" action="" method="POST">
+          <input type="hidden" id="uid" name="uid" value="">
+          <datalist id="time">
+            <option value="9:00Am-10:00Am"></option>
+            <option value="10:00Am-11:00Am"></option>
+            <option value="11:00Am-12:00Pm"></option>
+            <option value="12:00Pm-01:00Pm"></option>
+            <option value="05:00Pm-06:00Pm"></option>
+            <option value="06:00Pm-07:00Pm"></option>
+            <option value="07:00Pm-08:00Pm"></option>
+            <option value="08:00Pm-09:00Pm"></option>
+          </datalist>
+          Pickupdate<br>
+          <input type="date" name="pic_date" id="pic_date" placeholder="Enter PIckup date" />
+          <br>Pickuptime
+          <input type="text" name="pic_time" id="pic_time" placeholder="Enter pickup time" list="time" />
+          <br>Dropdate
+          <input type="date" name="drop_date" id="drop_date" placeholder="Enter Drop Date" />
+          <br>Droptime
+          <input type="text" name="drop_time" id="drop_time" placeholder="Enter Drop time" list="time" />
+          <br>Description
+          <textarea rows="5" cols="28" name="desc" id="desc"></textarea><br>
+          <input type="submit" name="order_form" value="Book Now" />
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

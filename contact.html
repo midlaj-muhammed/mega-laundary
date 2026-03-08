@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Contact Mega Laundry in Abu Dhabi. Reach us at Khalifa City A or Umm Al Nar for premium laundry and dry cleaning services.">
+    <meta name="keywords" content="Contact Mega Laundry, Laundry Abu Dhabi, Dry Cleaning Khalifa City">
+    <meta name="author" content="cloudtechdxb">
+    <title>Contact Us | Mega Laundry Abu Dhabi</title>
+    <link href="images/favicon-32x32.png" rel="icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="flat-icon/flaticon.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/modern-update.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ================================
+           Contact Page Specific Styles
+           ================================ */
+
+        /* Hero */
+        .contact-hero {
+            padding: 100px 0 70px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0, 82, 204, 0.08), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(141, 198, 63, 0.08), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-hero .badge-tag {
+            display: inline-block;
+            background: rgba(0, 82, 204, 0.1);
+            color: #0052cc;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5em;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .contact-hero h1 span {
+            color: #0052cc;
+        }
+
+        .contact-hero p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Contact Info Cards */
+        .contact-info-section {
+            padding: 80px 0 60px;
+            background: #f8faff;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0052cc, #00c6ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 82, 204, 0.12);
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-card .icon-wrap {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.1), rgba(0, 198, 255, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .icon-wrap {
+            background: linear-gradient(135deg, #0052cc, #00c6ff);
+        }
+
+        .contact-card .icon-wrap i {
+            font-size: 1.8em;
+            color: #0052cc;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover .icon-wrap i {
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: #0052cc;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-card a:hover {
+            color: #003d99;
+        }
+
+        /* Maps Section */
+        .maps-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .maps-section .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .maps-section .section-heading .badge-tag {
+            display: inline-block;
+            background: rgba(0, 82, 204, 0.1);
+            color: #0052cc;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+        }
+
+        .maps-section .section-heading h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
+
+        .maps-section .section-heading .divider {
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, #0052cc, #00c6ff);
+            margin: 0 auto;
+            border-radius: 3px;
+        }
+
+        .map-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 767px) {
+            .map-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .map-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .map-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 55px rgba(0, 82, 204, 0.15);
+        }
+
+        .map-card .map-header {
+            background: linear-gradient(135deg, #0052cc, #003d99);
+            color: white;
+            padding: 22px 28px;
+        }
+
+        .map-card .map-header h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15em;
+            font-weight: 700;
+            margin: 0 0 5px;
+            color: white;
+        }
+
+        .map-card .map-header p {
+            font-size: 0.85em;
+            opacity: 0.85;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 300px;
+            display: block;
+            border: none;
+        }
+
+        /* Contact Form Section */
+        .form-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 82, 204, 0.06), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .form-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-info h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .form-info h2 span {
+            color: #0052cc;
+        }
+
+        .form-info p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .form-info .social-links {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .form-info .social-links li a {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-info .social-links li a:hover {
+            background: #0052cc;
+            border-color: #0052cc;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .modern-form {
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+        }
+
+        @media (max-width: 576px) {
+            .modern-form {
+                padding: 30px 20px;
+            }
+        }
+
+        .form-row-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .form-row-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group-modern {
+            margin-bottom: 22px;
+        }
+
+        .form-group-modern label {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group-modern input,
+        .form-group-modern textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95em;
+            color: #333;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group-modern input:focus,
+        .form-group-modern textarea:focus {
+            border-color: #0052cc;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.08);
+        }
+
+        .form-group-modern textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0052cc, #0072ff);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 82, 204, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 82, 204, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(141, 198, 63, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(141, 198, 63, 0.3);
+            margin-top: 20px;
+            color: #4a7c17;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body id="contact">
+    <div class="pre-loder">
+        <div class="loding"> </div>
+    </div>
+
+    <header class="common-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/water2.png" alt="Logo"></a>
+                </div>
+
+                <div id="navbar" class="pull-left collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                        <li><a href="order_tracking/track_order.html" target="_blank">Track Order</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li class="active"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="search-wrapper pull-right">
+                    <ul>
+                        <li>
+                            <button class="open-menu"><i class="fa fa-bars"></i></button>
+                        </li>
+                        <li>
+                            <button class="open-search"><i class="fa fa-search"></i></button>
+                            <ul class="search-box">
+                                <li>
+                                    <form action="#">
+                                        <input type="text" placeholder="Search....">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="contact-hero">
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="badge-tag" data-aos="fade-down">📞 We're Here to Help</div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Get In <span>Touch</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200">Have a question or want to schedule a pickup? Reach out to us and
+                we'll get back to you as soon as possible.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-cards">
+
+                <!-- Phone -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrap">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>
+                        <a href="tel:+97125561175">Khalifa City: +971 255 61175</a><br>
+                        <a href="tel:+971526010826">Mobile: +971 52 6010 826</a><br>
+                        <a href="tel:+97125512722">Corp. Office: +971 255 12722</a>
+                    </p>
+                </div>
+
+                <!-- Address -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrap">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                    <h3>Find Us</h3>
+                    <p>
+                        <strong>Mega Laundry</strong><br>
+                        C8 Building, Khalifa City A<br>
+                        Municipality Building, Abu Dhabi<br><br>
+                        <strong>Corp. Office</strong><br>
+                        Umm Al Nar, Near BMW Showroom
+                    </p>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-wrap">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>
+                        <a href="mailto:info@megalaundryae.com">info@megalaundryae.com</a><br><br>
+                        <a href="mailto:support@megalaundryae.com">support@megalaundryae.com</a>
+                    </p>
+                </div>
+
+                <!-- Hours -->
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-wrap">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <h3>Working Hours</h3>
+                    <p>
+                        <strong>Saturday – Thursday</strong><br>
+                        8:00 AM – 10:00 PM<br><br>
+                        <strong>Friday</strong><br>
+                        2:00 PM – 10:00 PM
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Maps Section -->
+    <section class="maps-section">
+        <div class="container">
+            <div class="section-heading" data-aos="fade-up">
+                <div class="badge-tag">📍 Our Locations</div>
+                <h2>Find Our Branches</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="map-cards">
+                <!-- Map 1 -->
+                <div class="map-card" data-aos="fade-right">
+                    <div class="map-header">
+                        <h4><i class="fa fa-map-marker" style="margin-right:8px;"></i>Mega Laundry – Khalifa City</h4>
+                        <p>C8 Building, Khalifa City A, Abu Dhabi</p>
+                    </div>
+                    <iframe
+                        src="https://maps.google.com/maps?width=100%&height=300&hl=en&q=Mega%20Laundry%20%26%20Dry%20Clean%20-%2016th%20Street%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates+(Mega%20Laundry%20%26%20Dryclean)&ie=UTF8&t=&z=17&iwloc=B&output=embed"
+                        allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <!-- Map 2 -->
+                <div class="map-card" data-aos="fade-left">
+                    <div class="map-header">
+                        <h4><i class="fa fa-map-marker" style="margin-right:8px;"></i>Mega Laundry – Corp. Office</h4>
+                        <p>Umm Al Nar, Near BMW Showroom, Abu Dhabi</p>
+                    </div>
+                    <iframe
+                        src="https://maps.google.com/maps?width=100%&height=300&hl=en&coord=24.416579,54.4945928&q=Umm%20Al%20Nar%2C%20Near%20BMW%20Showroom%20-%20Abu%20Dhabi+(Mega%20Laundry%20%26%20Dryclean)&ie=UTF8&t=&z=17&iwloc=B&output=embed"
+                        allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="form-section">
+        <div class="container" style="position:relative; z-index:1;">
+            <div class="form-wrapper">
+
+                <!-- Left Info -->
+                <div class="form-info" data-aos="fade-right">
+                    <h2>Leave a <span>Message</span></h2>
+                    <p>Fill in the form and our team will get back to you within 24 hours. We love hearing from our
+                        clients!</p>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Right Form -->
+                <div class="modern-form" data-aos="fade-left" data-aos-delay="100">
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row-grid">
+                            <div class="form-group-modern">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="e.g. Ahmed Al Rashid" required>
+                            </div>
+                            <div class="form-group-modern">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+971 XX XXX XXXX">
+                            </div>
+                        </div>
+                        <div class="form-group-modern">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label for="service">Service Required</label>
+                            <input type="text" id="service" name="service"
+                                placeholder="e.g. Dry Cleaning, Washing, Ironing">
+                        </div>
+                        <div class="form-group-modern">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message"
+                                placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fa fa-paper-plane" style="margin-right:8px;"></i>Send Message
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            ✅ Thank you! Your message has been sent. We'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row">
+                <div class="victoria col col-xs-6 col-md-3">
+                    <img src="images/water1.png" alt class="img img-responsive">
+                    <p>Mega Laundry is the smart laundry solution to all your laundry woes. We provide affordable
+                        laundry service designed around YOU and YOUR needs.</p>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-about col col-xs-6 col-md-3">
+                    <h2>About Mega</h2>
+                    <ul>
+                        <li>Mega Laundry</li>
+                        <li>Khalifa City A</li>
+                        <li>Municipality Building (Pink Building)</li>
+                        <li>C8-1, PO.Box: 112152</li>
+                        <li>Tel:(+971) 02- 55 611 75</li>
+                        <li>Mobile:(+971) 52 6010 826</li>
+                        <li>Email:info@megalaundryae.com</li>
+                    </ul>
+                </div>
+
+                <div class="explore col col-xs-6 col-md-3">
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a target="_blank" href="https://privacy.aipsoft.com/megalaundry/">Privacy Policy</a></li>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                    </ul>
+                </div>
+
+                <div class="usefull-links col col-xs-6 col-md-3">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                        <li><a href="order_tracking/track_order.html" target="_blank">Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row copyright">
+                <div class="col col-md-6">
+                    <p><a href="#">Mega Laundry</a> &copy; <span>2018</span> All Right Reserved</p>
+                </div>
+                <div class="col col-md-6">
+                    <ul class="nav navbar-nav pull-right"></ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/common-script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const successEl = document.getElementById('formSuccess');
+            const btn = document.querySelector('.submit-btn');
+
+            btn.textContent = 'Sending...';
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                btn.textContent = '✓ Sent!';
+                btn.style.background = 'linear-gradient(135deg, #4caf50, #2e7d32)';
+                successEl.style.display = 'block';
+                document.getElementById('contactForm').reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa fa-paper-plane" style="margin-right:8px;"></i>Send Message';
+                    btn.style.background = 'linear-gradient(135deg, #0052cc, #0072ff)';
+                    btn.style.opacity = '1';
+                }, 3000);
+            }, 1200);
+        }
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <span class="wa-tooltip">💬 Chat on WhatsApp</span>
+        <a href="https://wa.me/9710526010826" class="wa-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+    </div>
+
+</body>
+
+</html>

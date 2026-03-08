@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Mega Laundry is the best laundry service in abu dhabi. we provide the best laundry service in khalifa city and top laundry in abu dhabi">
+    <meta name="keywords" content="Laundry in Khalifa City, Best Laundry in Abu Dhabi, Dry Cleaning in Abu Dhabi">
+    <meta name="author" content="cloudtechdxb">
+    <title>Photo Gallery | Mega Laundry Khalifa City Abu Dhabi</title>
+    <link href="images/favicon-32x32.png" rel="icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="flat-icon/flaticon.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- Modern Enhancement Styles -->
+    <link href="css/modern-update.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ========================
+           Gallery Page Specific CSS
+           ======================== */
+
+        /* Hero Banner */
+        .gallery-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 82, 204, 0.1), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(141, 198, 63, 0.1), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .gallery-hero .badge-tag {
+            display: inline-block;
+            background: rgba(0, 82, 204, 0.1);
+            color: #0052cc;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5em;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .gallery-hero h1 span {
+            color: #0052cc;
+        }
+
+        .gallery-hero p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Filter Tabs */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 30px 0 50px;
+        }
+
+        .filter-btn {
+            padding: 10px 28px;
+            border-radius: 30px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0052cc;
+            border-color: #0052cc;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 82, 204, 0.3);
+        }
+
+        /* Masonry Gallery Grid */
+        .gallery-grid {
+            columns: 3;
+            column-gap: 20px;
+            padding: 0;
+        }
+
+        @media (max-width: 991px) {
+            .gallery-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-grid {
+                columns: 1;
+            }
+
+            .gallery-hero h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-radius: 16px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Hover Overlay */
+        .gallery-item .item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 82, 204, 0.85) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+        }
+
+        .gallery-item:hover .item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .item-overlay h4 {
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            transform: translateY(15px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item .item-overlay span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85em;
+            transform: translateY(15px);
+            transition: transform 0.4s ease 0.05s;
+            display: block;
+        }
+
+        .gallery-item:hover .item-overlay h4,
+        .gallery-item:hover .item-overlay span {
+            transform: translateY(0);
+        }
+
+        .gallery-item .zoom-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0052cc;
+            font-size: 1em;
+            opacity: 0;
+            transform: scale(0.7) rotate(-45deg);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .zoom-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* Custom Lightbox */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox-overlay.open {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: lbFadeIn 0.3s ease;
+        }
+
+        @keyframes lbFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .lightbox-close:hover {
+            background: #0052cc;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        /* Gallery Section Wrapper */
+        .gallery-section {
+            padding: 0 0 100px;
+            background: #f8faff;
+        }
+
+        /* Count badge */
+        .gallery-count {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body id="gallery-3">
+    <div class="pre-loder">
+        <div class="loding"> </div>
+    </div> <!-- end of pre-loder -->
+
+    <header class="common-header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/water2.png" alt="Logo"></a>
+                </div>
+
+                <div id="navbar" class="pull-left collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                        <li><a href="order_tracking/track_order.html" target="_blank">Track Order</a></li>
+                        <li class="active"><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="search-wrapper pull-right">
+                    <ul>
+                        <li>
+                            <button class="open-menu"><i class="fa fa-bars"></i></button>
+                        </li>
+                        <li>
+                            <button class="open-search"><i class="fa fa-search"></i></button>
+                            <ul class="search-box">
+                                <li>
+                                    <form action="#">
+                                        <input type="text" placeholder="Search....">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="gallery-hero">
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="badge-tag" data-aos="fade-down">📸 Visual Showcase</div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Our <span>Photo</span> Gallery</h1>
+            <p data-aos="fade-up" data-aos-delay="200">A glimpse into the premium laundry and dry cleaning care we
+                provide to our valued clients in Abu Dhabi.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+
+            <!-- Filter Buttons -->
+            <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="laundry">Laundry</button>
+                <button class="filter-btn" data-filter="drycleaning">Dry Cleaning</button>
+                <button class="filter-btn" data-filter="facility">Our Facility</button>
+                <button class="filter-btn" data-filter="delivery">Delivery</button>
+            </div>
+
+            <div class="gallery-count" data-aos="fade-up" id="galleryCount">Showing 9 photos</div>
+
+            <!-- Masonry Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="gallery-item" data-category="laundry" onclick="openLightbox(0)">
+                    <img src="images/gallery-3/gallery/gallery1.JPG" alt="Best Laundry in Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Premium Laundry</h4>
+                        <span>Washing & Pressing</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="drycleaning" onclick="openLightbox(1)">
+                    <img src="images/gallery-3/gallery/gallery2.JPG" alt="Dry Cleaning Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Dry Cleaning</h4>
+                        <span>Expert Care</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="facility" onclick="openLightbox(2)">
+                    <img src="images/gallery-3/gallery/gallery3.JPG" alt="Laundry Service Khalifa City" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Our Facility</h4>
+                        <span>State of the Art</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="laundry" onclick="openLightbox(3)">
+                    <img src="images/gallery-3/gallery/gallery4.JPG" alt="Laundry in Khalifa City" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Garment Care</h4>
+                        <span>Washing & Folding</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="drycleaning" onclick="openLightbox(4)">
+                    <img src="images/gallery-3/gallery/gallery5.JPG" alt="Best Laundry Khalifa City" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Delicate Fabrics</h4>
+                        <span>Dry Clean Process</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="delivery" onclick="openLightbox(5)">
+                    <img src="images/gallery-3/gallery/gallery6.JPG" alt="Best Laundry Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Ready for Delivery</h4>
+                        <span>Pickup & Drop Service</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="facility" onclick="openLightbox(6)">
+                    <img src="images/gallery-3/gallery/gallery7.JPG" alt="Laundry Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Modern Equipment</h4>
+                        <span>Professional Grade</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="laundry" onclick="openLightbox(7)">
+                    <img src="images/gallery-3/gallery/gallery8.JPG" alt="Laundry in Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Stain Removal</h4>
+                        <span>Expert Technique</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-category="delivery" onclick="openLightbox(8)">
+                    <img src="images/gallery-3/gallery/gallery9.JPG" alt="Laundry in Abu Dhabi" loading="lazy">
+                    <div class="item-overlay">
+                        <h4>Freshly Pressed</h4>
+                        <span>Ready On Time</span>
+                    </div>
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+
+            </div> <!-- end gallery-grid -->
+        </div>
+    </section>
+
+    <!-- Custom Lightbox -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightboxOnBg(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="fa fa-times"></i></button>
+            <button class="lightbox-nav lightbox-prev" onclick="changeLightbox(-1)"><i
+                    class="fa fa-chevron-left"></i></button>
+            <img src="" alt="" id="lightboxImg">
+            <button class="lightbox-nav lightbox-next" onclick="changeLightbox(1)"><i
+                    class="fa fa-chevron-right"></i></button>
+            <div class="lightbox-caption">
+                <span id="lightboxCaption">Mega Laundry & Dry Clean</span>
+            </div>
+        </div>
+    </div>
+
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="row">
+                <div class="victoria col col-xs-6 col-md-3">
+                    <img src="images/water1.png" alt class="img img-responsive">
+                    <p>Mega Laundry is the smart laundry solution to all your laundry woes. We provide affordable
+                        laundry service that is designed around YOU and YOUR needs.</p>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-about col col-xs-6 col-md-3">
+                    <h2>About Mega</h2>
+                    <ul>
+                        <li>Mega Laundry</li>
+                        <li>Khalifa City A</li>
+                        <li>Municipality Building (Pink Building)</li>
+                        <li>C8-1, PO.Box: 112152</li>
+                        <li>Tel:(+971) 02- 55 611 75</li>
+                        <li>Mobile:(+971) 52 6010 826</li>
+                        <li>Email:info@megalaundryae.com</li>
+                    </ul>
+                </div>
+
+                <div class="explore col col-xs-6 col-md-3">
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a target="_blank" href="https://privacy.aipsoft.com/megalaundry/">Privacy Policy</a></li>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                    </ul>
+                </div>
+
+                <div class="usefull-links col col-xs-6 col-md-3">
+                    <h2>Usefulllink</h2>
+                    <ul>
+                        <li><a href="order_booking/schedule_pickup.html" target="_blank">Schedule Pickup</a></li>
+                        <li><a href="order_tracking/track_order.html" target="_blank">Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row copyright">
+                <div class="col col-md-6">
+                    <p><a href="#">Mega Laundry</a> &copy; <span>2018</span> All Right Reserved</p>
+                </div>
+                <div class="col col-md-6">
+                    <ul class="nav navbar-nav pull-right"></ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common-script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Init AOS
+        AOS.init({ duration: 800, once: true, offset: 80 });
+
+        // ─── Gallery Images Data ───
+        const galleryImages = [
+            { src: 'images/gallery-3/gallery/gallery1.JPG', caption: 'Premium Laundry — Washing & Pressing', category: 'laundry' },
+            { src: 'images/gallery-3/gallery/gallery2.JPG', caption: 'Dry Cleaning — Expert Care', category: 'drycleaning' },
+            { src: 'images/gallery-3/gallery/gallery3.JPG', caption: 'Our Facility — State of the Art', category: 'facility' },
+            { src: 'images/gallery-3/gallery/gallery4.JPG', caption: 'Garment Care — Washing & Folding', category: 'laundry' },
+            { src: 'images/gallery-3/gallery/gallery5.JPG', caption: 'Delicate Fabrics — Dry Clean Process', category: 'drycleaning' },
+            { src: 'images/gallery-3/gallery/gallery6.JPG', caption: 'Ready for Delivery — Pickup & Drop Service', category: 'delivery' },
+            { src: 'images/gallery-3/gallery/gallery7.JPG', caption: 'Modern Equipment — Professional Grade', category: 'facility' },
+            { src: 'images/gallery-3/gallery/gallery8.JPG', caption: 'Stain Removal — Expert Technique', category: 'laundry' },
+            { src: 'images/gallery-3/gallery/gallery9.JPG', caption: 'Freshly Pressed — Ready On Time', category: 'delivery' }
+        ];
+
+        let currentIndex = 0;
+        let filteredImages = [...galleryImages];
+
+        // ─── Filter Logic ───
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.gallery-item');
+
+                filteredImages = filter === 'all' ? galleryImages : galleryImages.filter(i => i.category === filter);
+
+                let visible = 0;
+                items.forEach((item, i) => {
+                    const cat = item.getAttribute('data-category');
+                    if (filter === 'all' || cat === filter) {
+                        item.style.display = 'block';
+                        item.style.animation = `fadeSlideIn 0.4s ease ${visible * 0.05}s both`;
+                        visible++;
+                        // Update onclick index to filtered set
+                        const filteredIdx = filteredImages.findIndex(f => f.src === galleryImages[i].src);
+                        item.onclick = () => openLightbox(filteredIdx < 0 ? 0 : filteredIdx);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('galleryCount').textContent = `Showing ${visible} photo${visible !== 1 ? 's' : ''}`;
+            });
+        });
+
+        // Inject keyframe animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeSlideIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ─── Lightbox Logic ───
+        function openLightbox(index) {
+            currentIndex = index;
+            const overlay = document.getElementById('lightboxOverlay');
+            const img = document.getElementById('lightboxImg');
+            const caption = document.getElementById('lightboxCaption');
+
+            img.src = filteredImages[currentIndex].src;
+            img.alt = filteredImages[currentIndex].caption;
+            caption.textContent = filteredImages[currentIndex].caption;
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function closeLightboxOnBg(e) {
+            if (e.target === document.getElementById('lightboxOverlay')) closeLightbox();
+        }
+
+        function changeLightbox(dir) {
+            currentIndex = (currentIndex + dir + filteredImages.length) % filteredImages.length;
+            const img = document.getElementById('lightboxImg');
+            const caption = document.getElementById('lightboxCaption');
+            img.style.opacity = 0;
+            img.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                img.src = filteredImages[currentIndex].src;
+                caption.textContent = filteredImages[currentIndex].caption;
+                img.style.opacity = 1;
+                img.style.transform = 'scale(1)';
+            }, 150);
+            img.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            if (!document.getElementById('lightboxOverlay').classList.contains('open')) return;
+            if (e.key === 'ArrowRight') changeLightbox(1);
+            if (e.key === 'ArrowLeft') changeLightbox(-1);
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <span class="wa-tooltip">💬 Chat on WhatsApp</span>
+        <a href="https://wa.me/9710526010826" class="wa-btn" target="_blank" rel="noopener"
+            aria-label="Chat on WhatsApp">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+    </div>
+
+</body>
+
+</html>
