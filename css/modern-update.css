@@ -1493,12 +1493,17 @@ footer .copyright span {
         font-size: 0.9rem !important;
     }
 
-    /* Explore button */
+    /* Explore button — centered perfectly */
     #main-hero a.btn {
-        padding: 12px 24px !important;
+        height: 46px !important;
+        padding: 0 24px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: normal !important;
         font-size: 0.85em !important;
-        bottom: 20px !important;
-        /* Move button lower to clear the text */
+        bottom: 25px !important;
+        /* Slightly more clearance */
     }
 }
 
