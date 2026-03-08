@@ -649,3 +649,1005 @@ footer .copyright span {
         font-size: 1.6em;
     }
 }
+
+
+/* =====================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS — ALL PAGES
+   =====================================================
+   Breakpoints:
+     - ≤1024px  Tablet landscape
+     - ≤768px   Tablet portrait / large phone
+     - ≤576px   Phone
+     - ≤400px   Small phone
+   ===================================================== */
+
+/* ─── Global shared fixes ─── */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    section {
+        padding: 60px 0 !important;
+    }
+
+    h2 {
+        font-size: 1.8em !important;
+    }
+
+    h3 {
+        font-size: 1.3em !important;
+    }
+
+    /* Remove oversized top-offset buttons */
+    .hero>a {
+        top: auto !important;
+        bottom: 30px !important;
+        position: relative !important;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5em !important;
+    }
+
+    h3 {
+        font-size: 1.15em !important;
+    }
+
+    p {
+        font-size: 0.95em !important;
+    }
+}
+
+
+/* ─── INDEX PAGE: Transparent Header on Mobile ─── */
+@media (max-width: 768px) {
+    #home-1 header {
+        position: relative !important;
+        background: rgba(0, 0, 0, 0.75) !important;
+    }
+
+    #home-1 header::before {
+        display: none !important;
+    }
+
+    /* Dropdown menu on mobile – readable */
+    #home-1 header .navbar-collapse {
+        background: rgba(0, 0, 0, 0.9) !important;
+        padding: 10px 20px !important;
+    }
+
+    #home-1 header .navbar-nav>li>a {
+        font-size: 13px !important;
+        padding: 10px 15px !important;
+    }
+
+    #home-1 .hero {
+        margin-top: 0 !important;
+    }
+}
+
+
+/* ─── HERO SECTION ─── */
+@media (max-width: 768px) {
+    #home-1 .hero .item {
+        height: 550px !important;
+    }
+
+    #home-1 .hero .title {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 90% !important;
+        text-align: center !important;
+    }
+
+    #home-1 .hero .title h2 {
+        font-size: 2em !important;
+        line-height: 1.3 !important;
+    }
+
+    #home-1 .hero .title span.playfair {
+        font-size: 1em !important;
+    }
+
+    #home-1 .hero .title p {
+        font-size: 0.9em !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #home-1 .hero .item {
+        height: 450px !important;
+    }
+
+    #home-1 .hero .title h2 {
+        font-size: 1.6em !important;
+    }
+}
+
+
+/* ─── ABOUT (index about-resort section) ─── */
+@media (max-width: 768px) {
+    .about-resort .row {
+        flex-direction: column !important;
+        display: flex;
+    }
+
+    .about-resort .about,
+    .about-resort .resort {
+        width: 100% !important;
+    }
+
+    .about-resort .resort {
+        min-height: 280px !important;
+    }
+}
+
+
+/* ─── FEATURES / FAETURE ─── */
+@media (max-width: 768px) {
+    .faeture .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .faeture .col {
+        width: 50% !important;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faeture .col {
+        width: 100% !important;
+    }
+}
+
+
+/* ─── SPA ADVANTAGES (index page) ─── */
+@media (max-width: 768px) {
+    .spa-advantages .advantage-details {
+        flex-direction: column !important;
+    }
+
+    .spa-advantages .advantages {
+        width: 100% !important;
+    }
+
+    /* Modern advantages (service page) */
+    .spa-advantages .modern-flex {
+        flex-direction: column-reverse !important;
+        gap: 30px !important;
+    }
+
+    .spa-advantages .image-column {
+        width: 100% !important;
+    }
+
+    .spa-advantages .advantage-item {
+        padding: 20px !important;
+        gap: 15px !important;
+    }
+
+    .spa-advantages .advantage-item .icon-box {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .spa-advantages .advantage-item .content-box h3 {
+        font-size: 1.1em !important;
+    }
+}
+
+
+/* ─── SHOP / PRICING SERVICES ─── */
+@media (max-width: 768px) {
+    .shop {
+        padding: 60px 0 !important;
+    }
+
+    .shop .slider-container {
+        gap: 16px !important;
+        padding: 20px 15px !important;
+    }
+
+    .shop .shop-card {
+        flex: 0 0 260px !important;
+    }
+
+    .shop .shop-card .image-wrapper {
+        height: 300px !important;
+    }
+
+    .shop .section-title-modern h2 {
+        font-size: 2em !important;
+    }
+
+    .slider-controls button {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1em !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .shop .shop-card {
+        flex: 0 0 220px !important;
+    }
+
+    .shop .shop-card .image-wrapper {
+        height: 260px !important;
+    }
+}
+
+
+/* ─── FUN FACT / STATS ─── */
+@media (max-width: 768px) {
+    .fun-fact .row {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .fun-fact .col {
+        width: 50% !important;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fun-fact .col {
+        width: 100% !important;
+    }
+}
+
+
+/* ─── NEWS-SHOP SECTION (index) ─── */
+@media (max-width: 768px) {
+
+    .news-shop .news,
+    .news-shop .shop {
+        width: 100% !important;
+    }
+
+    .news-shop .news.col-md-6 {
+        max-width: 100% !important;
+    }
+
+    .news-shop .appointment .btn-group {
+        flex-wrap: wrap;
+        display: flex;
+        gap: 8px;
+    }
+}
+
+
+/* ─── ABOUT VICTORIA (service page top section) ─── */
+@media (max-width: 768px) {
+    .about-victoria .icon .row {
+        flex-direction: column;
+    }
+
+    .about-victoria .icon ul {
+        flex-wrap: wrap;
+        justify-content: center !important;
+        display: flex;
+        padding-left: 0;
+    }
+
+    .about-victoria .icon ul li {
+        width: 33% !important;
+        text-align: center;
+    }
+
+    .about-victoria #facial-style {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .about-victoria .btn {
+        display: block !important;
+        width: 90% !important;
+        margin: 10px auto !important;
+        text-align: center !important;
+    }
+}
+
+
+/* ─── FOOTER ─── */
+@media (max-width: 768px) {
+    footer .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer .victoria,
+    footer .footer-about,
+    footer .explore,
+    footer .usefull-links {
+        width: 50% !important;
+        margin-bottom: 30px;
+        min-height: auto !important;
+    }
+
+    footer .copyright .col {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    footer .copyright .pull-right {
+        float: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    footer .victoria,
+    footer .footer-about,
+    footer .explore,
+    footer .usefull-links {
+        width: 100% !important;
+    }
+}
+
+
+/* ─── GALLERY PAGE HERO ─── */
+@media (max-width: 768px) {
+    .gallery-hero {
+        padding: 80px 0 40px !important;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.5em !important;
+    }
+
+    .gallery-filters {
+        gap: 8px !important;
+        padding: 20px 0 30px !important;
+    }
+
+    .filter-btn {
+        padding: 8px 18px !important;
+        font-size: 0.82em !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-hero h1 {
+        font-size: 2em !important;
+    }
+
+    .gallery-grid {
+        columns: 2 !important;
+        column-gap: 12px !important;
+    }
+
+    .gallery-item {
+        margin-bottom: 12px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .gallery-grid {
+        columns: 1 !important;
+    }
+}
+
+
+/* ─── CONTACT PAGE ─── */
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 80px 0 40px !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.5em !important;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+    }
+
+    .contact-card {
+        padding: 28px 18px !important;
+    }
+
+    .form-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .form-info h2 {
+        font-size: 2em !important;
+    }
+
+    .modern-form {
+        padding: 30px 25px !important;
+    }
+
+    .form-row-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .map-cards {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.8em !important;
+    }
+}
+
+
+/* ─── SERVICE PAGE BREADCRUMB ─── */
+@media (max-width: 576px) {
+    .photo-gallery-title .section-title h2 {
+        font-size: 1.8em !important;
+    }
+}
+
+
+/* ─── ABOUT PAGE: VIC-PARTNER & TEAM ─── */
+@media (max-width: 768px) {
+
+    .vic-partner .row,
+    .team .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .vic-partner .col,
+    .team .col {
+        width: 50% !important;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .vic-partner .col,
+    .team .col {
+        width: 100% !important;
+    }
+}
+
+
+/* ─── ABOUT PAGE MIDDLE BANNER ─── */
+@media (max-width: 768px) {
+    .middle-banner .flex-layout {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+
+
+/* ─── LIGHTBOX NAV BUTTONS (mobile) ─── */
+@media (max-width: 576px) {
+    .lightbox-prev {
+        left: -10px !important;
+    }
+
+    .lightbox-next {
+        right: -10px !important;
+    }
+
+    .lightbox-content {
+        max-width: 98vw !important;
+    }
+
+    .lightbox-close {
+        top: -40px !important;
+    }
+}
+
+
+/* ─── SECTION TITLE MODERN (shared across pages) ─── */
+@media (max-width: 768px) {
+    .section-title-modern h2 {
+        font-size: 2em !important;
+    }
+
+    .shop .section-title-modern h2 {
+        font-size: 1.8em !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title-modern h2 {
+        font-size: 1.6em !important;
+    }
+}
+
+
+/* ─── NAVBAR HAMBURGER: always show on mobile ─── */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block !important;
+    }
+
+    header .navbar-brand {
+        float: left !important;
+        margin-left: 15px !important;
+        transform: none !important;
+        left: auto !important;
+        position: relative !important;
+    }
+
+    header .navbar-brand img {
+        height: 45px !important;
+    }
+
+    /* Collapsed menu drop down from top */
+    header .navbar-collapse {
+        background: rgba(20, 20, 30, 0.97) !important;
+        border: none !important;
+        padding: 10px 0 20px !important;
+    }
+
+    header .navbar-nav>li>a {
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+
+    header .search-wrapper {
+        position: absolute !important;
+        top: 18px !important;
+        right: 15px !important;
+    }
+}
+
+/* ─── WHATSAPP BUTTON — extra small ─── */
+@media (max-width: 400px) {
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-float .wa-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+}
+
+
+/* =====================================================
+   PHASE 2: TARGETED MOBILE FIXES (from screenshot audit)
+   ===================================================== */
+
+/* 1. Prevent horizontal scroll on ALL pages */
+html,
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Footer logo — cap it on mobile */
+@media (max-width: 768px) {
+    footer .victoria img {
+        max-width: 120px !important;
+        height: auto !important;
+    }
+
+    footer .nav.navbar-nav {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        display: flex;
+        gap: 4px;
+    }
+}
+
+/* 3. INDEX: Hero — text box does NOT overflow on small screens */
+@media (max-width: 576px) {
+    #main-hero .title {
+        padding: 0 15px !important;
+        width: 100% !important;
+    }
+
+    #main-hero .title h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        word-break: break-word;
+    }
+
+    #main-hero .title p {
+        font-size: 0.85rem !important;
+        padding: 8px 12px !important;
+        max-width: 95vw !important;
+        word-break: break-word;
+    }
+
+    #main-hero .title .playfair {
+        font-size: 0.9rem !important;
+    }
+
+    /* Explore button */
+    #main-hero a.btn {
+        padding: 12px 24px !important;
+        font-size: 0.85em !important;
+    }
+}
+
+/* 4. INDEX: Hero slides — better mobile height */
+@media (max-width: 576px) {
+    #home-1 .hero .item {
+        height: 400px !important;
+        min-height: 400px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    #home-1 .hero .item {
+        height: 350px !important;
+    }
+}
+
+/* 5. INDEX: Transparent header — on mobile be relative so content flows below */
+@media (max-width: 768px) {
+    #home-1 header {
+        position: relative !important;
+    }
+
+    #home-1 .hero {
+        margin-top: 0 !important;
+    }
+}
+
+/* 6. NAVBAR: logo left, toggle right, search icon tucked in */
+@media (max-width: 768px) {
+    header .navbar-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+        padding: 8px 15px !important;
+        height: auto !important;
+    }
+
+    header .navbar-brand {
+        position: static !important;
+        float: none !important;
+        transform: none !important;
+        left: auto !important;
+        margin: 0 !important;
+    }
+
+    header .navbar-brand img {
+        height: 42px !important;
+    }
+
+    header .navbar-toggle {
+        position: static !important;
+        float: none !important;
+        margin: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 6px !important;
+        padding: 8px !important;
+    }
+
+    /* Search icon — top right absolute */
+    header .search-wrapper {
+        position: absolute !important;
+        top: 14px !important;
+        right: 65px !important;
+        z-index: 5;
+    }
+
+    header .search-wrapper ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    header .search-wrapper button {
+        padding: 5px !important;
+        font-size: 1em !important;
+    }
+
+    /* Collapsed nav menu panel */
+    header #navbar.collapse.in,
+    header #navbar.collapsing {
+        background: rgba(10, 10, 20, 0.96) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        padding: 5px 0 15px !important;
+        margin-top: 0 !important;
+    }
+
+    header .navbar-nav>li>a {
+        color: #fff !important;
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    header .navbar-nav>li.active>a {
+        color: #8dc63f !important;
+        background: rgba(141, 198, 63, 0.08) !important;
+    }
+
+    /* Remove the floating pull-right on nav items */
+    header #navbar {
+        float: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    header .navbar-nav {
+        float: none !important;
+        margin: 0 !important;
+    }
+}
+
+/* 7. SERVICE PAGE: About victoria service icons — proper 2-col grid */
+@media (max-width: 576px) {
+    .about-victoria .icon ul {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px 10px !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    .about-victoria .icon ul li {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .about-victoria .icon ul li i {
+        font-size: 2em !important;
+    }
+
+    .about-victoria .icon ul li p {
+        font-size: 0.85em !important;
+    }
+}
+
+/* 8. ABOUT PAGE: App store icons — center and scale */
+@media (max-width: 576px) {
+    .about-victoria div[style*="margin-top: 20px"] {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+
+    .about-victoria div[style*="margin-top: 20px"] a {
+        margin-left: 0 !important;
+    }
+
+    .about-victoria div[style*="margin-top: 20px"] a img {
+        height: 42px !important;
+    }
+}
+
+/* 9. GALLERY: Filter tabs — wrap cleanly, no orphan last-item */
+@media (max-width: 576px) {
+    .gallery-filters {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 15px 10px 25px !important;
+    }
+
+    .filter-btn {
+        padding: 7px 16px !important;
+        font-size: 0.8em !important;
+        border-radius: 20px !important;
+    }
+
+    .gallery-section {
+        padding: 0 0 60px !important;
+    }
+
+    .gallery-grid {
+        padding: 0 12px !important;
+    }
+}
+
+/* 10. CONTACT: Cards — single column on small phones */
+@media (max-width: 500px) {
+    .contact-cards {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 5px;
+    }
+
+    .contact-hero {
+        padding: 70px 0 30px !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.8em !important;
+        line-height: 1.2 !important;
+    }
+
+    .contact-info-section {
+        padding: 50px 0 40px !important;
+    }
+}
+
+/* 11. CONTACT: Form section padding on mobile */
+@media (max-width: 576px) {
+    .form-section {
+        padding: 60px 0 !important;
+    }
+
+    .modern-form {
+        padding: 25px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .form-group-modern input,
+    .form-group-modern textarea {
+        padding: 12px 14px !important;
+        font-size: 0.9em !important;
+    }
+
+    .submit-btn {
+        padding: 14px !important;
+        font-size: 0.9em !important;
+    }
+}
+
+/* 12. CONTACT: Maps — full-width on mobile */
+@media (max-width: 576px) {
+    .maps-section {
+        padding: 50px 0 !important;
+    }
+
+    .map-card iframe {
+        height: 240px !important;
+    }
+
+    .maps-section .section-heading h2 {
+        font-size: 1.8em !important;
+    }
+}
+
+/* 13. SERVICE: Pricing slider — single card view on mobile */
+@media (max-width: 500px) {
+    .shop .shop-card {
+        flex: 0 0 85vw !important;
+        max-width: 85vw !important;
+    }
+
+    .shop .slider-container {
+        padding: 15px 20px !important;
+        gap: 15px !important;
+    }
+
+    .shop .shop-card .image-wrapper {
+        height: 250px !important;
+    }
+}
+
+/* 14. SERVICE: Advantage section image — compact on mobile */
+@media (max-width: 576px) {
+    .spa-advantages .advantage-hero-image {
+        border-radius: 16px !important;
+        max-height: 250px !important;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+/* 15. PAGE BREADCRUMB — center on mobile */
+@media (max-width: 576px) {
+    .page-breadcrumb {
+        padding: 20px 0 !important;
+        text-align: center;
+    }
+
+    .page-breadcrumb .breadcrumb {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .simple-page-breadcrumb {
+        text-align: center;
+    }
+}
+
+/* 16. ABOUT PAGE: Section title with logo */
+@media (max-width: 576px) {
+    .about-victoria .section-title img {
+        max-height: 60px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .about-victoria h2 {
+        font-size: 1.5em !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* 17. FUN FACT numbers — readable on mobile */
+@media (max-width: 576px) {
+    .fun-fact .number {
+        font-size: 2.5em !important;
+    }
+
+    .fun-fact .fact-title {
+        font-size: 1em !important;
+    }
+}
+
+/* 18. Footer — remove fixed min-height on mobile */
+@media (max-width: 768px) {
+    footer .container .row:first-child>.col {
+        min-height: auto !important;
+    }
+
+    footer h2 {
+        font-size: 1.1em !important;
+        margin-bottom: 12px !important;
+    }
+
+    footer ul li {
+        font-size: 0.9em !important;
+        line-height: 1.6 !important;
+    }
+
+    footer>.container>.row.copyright p {
+        font-size: 0.82em !important;
+        text-align: center !important;
+    }
+}
+
+/* 19. Photo gallery title section */
+@media (max-width: 576px) {
+    .photo-gallery-title {
+        padding: 50px 0 30px !important;
+    }
+
+    .photo-gallery-title .section-title h2 {
+        font-size: 1.8em !important;
+    }
+}
+
+/* 20. Global image overflow guard */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 21. Iframe responsive */
+iframe {
+    max-width: 100% !important;
+}
+
+/* 22. Mega Laundry hero on index — clear stacking context */
+@media (max-width: 576px) {
+    #home-1 .hero .hero-slider {
+        display: block !important;
+        position: relative !important;
+    }
+
+    #home-1 .hero .hero-slider .item {
+        position: relative !important;
+    }
+}
