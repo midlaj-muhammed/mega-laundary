@@ -230,6 +230,179 @@ header .search-wrapper button {
 }
 
 /* =====================================================
+   RESORT SECTION MODERNIZATION
+   ===================================================== */
+.about-resort {
+    overflow: hidden;
+    background: #fff;
+}
+
+.modern-resort-showcase {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modern-resort-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.modern-resort-showcase:hover img {
+    transform: scale(1.1);
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 82, 204, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+}
+
+.modern-resort-showcase .title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    max-width: 80%;
+    width: auto;
+    left: auto;
+    top: auto;
+    transform: none;
+}
+
+.laundry-badge {
+    background: #494b46;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(141, 198, 63, 0.3);
+}
+
+.modern-resort-showcase .title h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.modern-resort-showcase .title h2 span {
+    color: #8dc63f;
+}
+
+.italic-subtitle {
+    font-size: 1.1rem !important;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-style: italic;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .modern-resort-showcase {
+        height: 450px;
+    }
+
+    .modern-resort-showcase .title h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Modern About Content */
+.modern-about-container {
+    padding: 100px 60px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modern-about-text {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.modern-accent {
+    color: #8dc63f;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.modern-about-text h3 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.text-primary-blue {
+    color: #0052cc;
+}
+
+.modern-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    font-weight: 700;
+    color: #111;
+}
+
+.modern-divider {
+    border: none;
+    height: 3px;
+    width: 60px;
+    background: #8dc63f;
+    margin: 0 0 30px 0;
+}
+
+.modern-quote {
+    color: #888;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+    .modern-about-container {
+        padding: 60px 30px;
+        height: auto;
+        border-right: none;
+    }
+}
+
+
+
+/* =====================================================
    NEWS-SHOP SECTION UPDATES
    ===================================================== */
 .news-shop {
@@ -623,10 +796,7 @@ footer .copyright span {
     color: #fff !important;
 }
 
-/* Overlay adjustments for better contrast */
-.about-resort .resort .overlay1 {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
-}
+/* Overlay adjustments for better contrast — (Obsolete, using showcase-overlay now) */
 
 .news-letter-popup .wrapper {
     border-radius: 20px;
