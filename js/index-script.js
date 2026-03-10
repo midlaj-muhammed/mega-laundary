@@ -1,11 +1,11 @@
-$(function() {
+$(function () {
     'use strict';
 
-/*--------------------------------------------------------------
-    Preloder fadeout and newsletter popup
---------------------------------------------------------------*/
-    $(window).load(function() {
-        $(".pre-loder").delay(500).fadeOut('slow', function() {
+    /*--------------------------------------------------------------
+        Preloder fadeout and newsletter popup
+    --------------------------------------------------------------*/
+    $(window).load(function () {
+        $(".pre-loder").delay(500).fadeOut('slow', function () {
             var newsLetterPopup = $('.news-letter-popup');
             newsLetterPopup.css({
                 'visibility': 'visible',
@@ -16,58 +16,58 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-  Setting resort and beautiful spa col heigh
---------------------------------------------------------------*/
-    $(window).load(function() {
+    /*--------------------------------------------------------------
+      Setting resort and beautiful spa col heigh
+    --------------------------------------------------------------*/
+    $(window).load(function () {
         resortSectionHeight();
         beautiSpaSectionHeight();
     });
 
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         resortSectionHeight();
         beautiSpaSectionHeight();
     });
 
 
 
-/*--------------------------------------------------------------
-  Hero slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+      Hero slider
+    --------------------------------------------------------------*/
     var time = 7; // time in seconds
 
     var $progressBar,
-    $bar, 
-    $elem, 
-    isPause, 
-    tick,
-    percentTime;
+        $bar,
+        $elem,
+        isPause,
+        tick,
+        percentTime;
 
     //Init the carousel
     $(".hero-slider").owlCarousel({
-        slideSpeed : 500,
-        paginationSpeed : 500,
-        singleItem : true,
-        afterInit : progressBar,
-        afterMove : moved,
-        startDragging : pauseOnDragging,
+        slideSpeed: 500,
+        paginationSpeed: 500,
+        singleItem: true,
+        afterInit: progressBar,
+        afterMove: moved,
+        startDragging: pauseOnDragging,
         mouseDrag: false
 
     });
 
-    function progressBar(elem){
+    function progressBar(elem) {
         $elem = elem;
         buildProgressBar();
         start();
     }
 
-    function buildProgressBar(){
-        $progressBar = $("<div>",{
-            id:"progressBar"
+    function buildProgressBar() {
+        $progressBar = $("<div>", {
+            id: "progressBar"
         });
-        $bar = $("<div>",{
-            id:"bar"
+        $bar = $("<div>", {
+            id: "bar"
         });
         $progressBar.append($bar).prependTo($elem);
     }
@@ -79,32 +79,32 @@ $(function() {
     };
 
     function interval() {
-        if(isPause === false){
+        if (isPause === false) {
             percentTime += 1 / time;
             $bar.css({
-               width: percentTime+"%"
-             });
-            if(percentTime >= 100){
-              //slide to next item 
-              $elem.trigger('owl.next')
+                width: percentTime + "%"
+            });
+            if (percentTime >= 100) {
+                //slide to next item 
+                $elem.trigger('owl.next')
             }
         }
     }
 
-    function pauseOnDragging(){
+    function pauseOnDragging() {
         isPause = true;
     }
 
-    function moved(){
+    function moved() {
         clearTimeout(tick);
         start();
     }
 
 
-/*--------------------------------------------------------------
-    Functin for resort and beautiful spa coloum height
---------------------------------------------------------------*/
-     /******************** resort section height ********************/
+    /*--------------------------------------------------------------
+        Functin for resort and beautiful spa coloum height
+    --------------------------------------------------------------*/
+    /******************** resort section height ********************/
     function resortSectionHeight() {
         var aboutSectionHeight = $('.about').innerHeight();
         var resortSection = $('.resort .item');
@@ -123,36 +123,36 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-    About slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        About slider
+    --------------------------------------------------------------*/
     $('.about-slider').owlCarousel({
-        singleItem : true,
+        singleItem: true,
         navigation: true,
-        navigationText:  ["<i class='flaticon-arrows-3'></i>","<i class='flaticon-arrows-1'></i>"],
+        navigationText: ["<i class='flaticon-arrows-3'></i>", "<i class='flaticon-arrows-1'></i>"],
         pagination: false,
         mouseDrag: false
     });
 
 
 
-/*--------------------------------------------------------------
-    Resort slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        Resort slider
+    --------------------------------------------------------------*/
     $('.resort-slider').owlCarousel({
-        singleItem : true,
+        singleItem: true,
         mouseDrag: false
     });
 
 
 
-/*--------------------------------------------------------------
-    Butiful spa and feature section animation
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        Butiful spa and feature section animation
+    --------------------------------------------------------------*/
     $('.beautifull-spa-and-faeture #first-box').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.beautifull-spa-and-faeture #first-box').addClass('animated bounceIn1');
             $('.beautifull-spa-and-faeture #second-box').addClass('animated bounceIn3');
         });
@@ -161,7 +161,7 @@ $(function() {
     $('.beautifull-spa-and-faeture #third-box').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.beautifull-spa-and-faeture #third-box').addClass('animated bounceIn3');
             $('.beautifull-spa-and-faeture #fourth-box').addClass('animated bounceIn4');
         });
@@ -169,33 +169,33 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-   Fun fact section animate numbers
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+       Fun fact section animate numbers
+    --------------------------------------------------------------*/
     $('.fun-fact .container .row').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
-            $('#happy-clients').animateNumber({ number: 1455 }, 2000);
-            $('#awards').animateNumber({ number: 725 }, 2000);
-            $('#coffee').animateNumber({ number: 260 }, 2000);
-            $('#works').animateNumber({ number: 128 }, 2000);
+        $this.appear(function () {
+            $('#happy-clients').animateNumber({ number: 8450 }, 2000);
+            $('#awards').animateNumber({ number: 12500 }, 2000);
+            $('#coffee').animateNumber({ number: 5200 }, 2000);
+            $('#works').animateNumber({ number: 15400 }, 2000);
         });
     });
 
 
 
-/*--------------------------------------------------------------
-   Advantage section animation
---------------------------------------------------------------*/
-     $('.advantages #first-advantage, .advantages #second-advantage, .advantages #third-advantage, .advantages #fourth-advantage').css({
+    /*--------------------------------------------------------------
+       Advantage section animation
+    --------------------------------------------------------------*/
+    $('.advantages #first-advantage, .advantages #second-advantage, .advantages #third-advantage, .advantages #fourth-advantage').css({
         'opacity': 0
-     });
+    });
 
     $('.advantages #first-advantage').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.advantages #first-advantage').addClass('animated fadeInUp');
         });
     });
@@ -203,7 +203,7 @@ $(function() {
     $('.advantages #second-advantage').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.advantages #second-advantage').addClass('animated fadeInUp');
         });
     });
@@ -211,7 +211,7 @@ $(function() {
     $('.advantages #third-advantage').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.advantages #third-advantage').addClass('animated fadeInUp');
         });
     });
@@ -219,54 +219,54 @@ $(function() {
     $('.advantages #fourth-advantage').each(function () {
         var $this = $(this);
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.advantages #fourth-advantage').addClass('animated fadeInUp');
         });
     });
 
 
 
-/*--------------------------------------------------------------
-   Facial massage slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+       Facial massage slider
+    --------------------------------------------------------------*/
     $('.facial-slider').owlCarousel({
-        items : 3,
-        itemsDesktop: [1199,3],    
+        items: 3,
+        itemsDesktop: [1199, 3],
         autoPlay: true,
         navigation: true,
-        navigationText:  ["<i class='flaticon-arrows-3'></i>","<i class='flaticon-arrows-1'></i>"],
+        navigationText: ["<i class='flaticon-arrows-3'></i>", "<i class='flaticon-arrows-1'></i>"],
         pagination: false,
         mouseDrag: false
     });
 
 
 
-/*--------------------------------------------------------------
-  Shop slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+      Shop slider
+    --------------------------------------------------------------*/
     $('.shop-slider').owlCarousel({
-        singleItem : true,
+        singleItem: true,
         autoPlay: false,
         navigation: true,
-        navigationText:  ["<i class='flaticon-arrows-3'></i>","<i class='flaticon-arrows-1'></i>"],
+        navigationText: ["<i class='flaticon-arrows-3'></i>", "<i class='flaticon-arrows-1'></i>"],
         pagination: false,
         mouseDrag: false
     });
 
 
 
-/*--------------------------------------------------------------
-  Team member section animation
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+      Team member section animation
+    --------------------------------------------------------------*/
     $('.exparts #left-member, .exparts #right-member').css({
         'opacity': 0
     });
-     
+
     $('.exparts .content').each(function () {
         var $this = $(this);
         var myVal = $(this).data("value");
 
-        $this.appear(function() {
+        $this.appear(function () {
             $('.exparts #left-member').addClass('fadeInLeft');
             $('.exparts #right-member').addClass('fadeInRight');
         });
@@ -274,45 +274,45 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-    Jquery date picker
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        Jquery date picker
+    --------------------------------------------------------------*/
     $('#arrive-date').datepicker();
     $('#depart-date').datepicker();
 
 
 
-/*--------------------------------------------------------------
-    Partner slider
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        Partner slider
+    --------------------------------------------------------------*/
     $('.partner-slider').owlCarousel({
-        items : 4,
-        itemsTablet: [767,3],
+        items: 4,
+        itemsTablet: [767, 3],
         autoPlay: true,
         navigation: true,
-        navigationText:  ["<i class='flaticon-arrows-3'></i>","<i class='flaticon-arrows-1'></i>"],
+        navigationText: ["<i class='flaticon-arrows-3'></i>", "<i class='flaticon-arrows-1'></i>"],
         pagination: false,
         mouseDrag: false
     });
 
 
 
-/*--------------------------------------------------------------
-    Appoinment Popup box
---------------------------------------------------------------*/
-    (function() {
+    /*--------------------------------------------------------------
+        Appoinment Popup box
+    --------------------------------------------------------------*/
+    (function () {
         var makeAppoinmentBtn = $('.make-appointment-btn'),
             appoinmentPopUpBox = $('.appoinment-popup-box'),
             closeBtn = $('.appoinment-popup-box .close');
 
-        makeAppoinmentBtn.on('click', function(e) {
+        makeAppoinmentBtn.on('click', function (e) {
             e.preventDefault();
             appoinmentPopUpBox.css({
                 'visibility': 'visible',
                 'opacity': 1
             });
 
-            closeBtn.on('click', function() {
+            closeBtn.on('click', function () {
                 appoinmentPopUpBox.css({
                     'visibility': 'hidden',
                     'opacity': 0
@@ -325,14 +325,14 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-    News letter Popup box close
---------------------------------------------------------------*/
-    (function() {
+    /*--------------------------------------------------------------
+        News letter Popup box close
+    --------------------------------------------------------------*/
+    (function () {
         var newsLetterPopUpBox = $('.news-letter-popup'),
             closeBtn = $('.news-letter-popup .close');
 
-        closeBtn.on('click', function() {
+        closeBtn.on('click', function () {
             newsLetterPopUpBox.css({
                 'visibility': 'hidden',
                 'opacity': 0
@@ -343,9 +343,9 @@ $(function() {
 
 
 
-/*--------------------------------------------------------------
-    Common script for menu and back to top btn
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+        Common script for menu and back to top btn
+    --------------------------------------------------------------*/
 
     // toggle search box and menu
     var openSearch = $('header .open-search'),
@@ -353,12 +353,12 @@ $(function() {
         searchBox = $('header .search-box'),
         menu = $('header .navbar .navbar-nav');
 
-    openSearch.on('click', function() {
+    openSearch.on('click', function () {
         searchBox.toggleClass('toggle-search-box');
         return false;
     });
 
-    openMenu.on('click', function() {
+    openMenu.on('click', function () {
         menu.toggleClass('toggle-menu');
         return false;
     });
@@ -368,15 +368,15 @@ $(function() {
     $('body').prepend('<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>');
     var amountScrolled = 300;
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(window).scrollTop() > amountScrolled) {
             $('a.back-to-top').fadeIn('slow');
         } else {
             $('a.back-to-top').fadeOut('slow');
         }
     });
-    
-    $('a.back-to-top').on('click', function() {
+
+    $('a.back-to-top').on('click', function () {
         $('html,body').animate({
             scrollTop: 0
         }, 700);
