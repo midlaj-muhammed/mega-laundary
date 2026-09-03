@@ -49,7 +49,6 @@
     <link href="css/jquery-ui.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/css3-animation.css" rel="stylesheet">
-    <!-- Modern AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -58,8 +57,13 @@
 </head>
 
 <body id="home-1">
-    <div class="pre-loder">
-        <div class="loding"> </div>
+    <div class="pre-loder" role="status" aria-label="Loading Mega Laundry">
+        <div class="loding">
+            <div class="loader-brand">
+                <img src="images/logo-dark.png" alt="Mega Laundry">
+            </div>
+            <div class="loader-line" aria-hidden="true"><span></span></div>
+        </div>
     </div> <!-- end of pre-loder -->
 
     <header>
@@ -344,50 +348,32 @@
             <div class="row showcase-grid">
                 <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="100">
                     <div class="showcase-card">
-                        <img src="images/advantages/adv1.jpg" alt="Mega Laundry Showcase 1">
-                        <div class="hover-overlay">
-                            <i class="flaticon-stains"></i>
-                        </div>
+                        <img src="images/updated gallery/photo_1_2026-09-03_22-33-38.jpg"
+                            alt="Mega Laundry free pickup and delivery service">
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="200">
                     <div class="showcase-card">
-                        <img src="images/advantages/adv2.jpg" alt="Mega Laundry Showcase 2">
-                        <div class="hover-overlay">
-                            <i class="flaticon-iron-1"></i>
-                        </div>
+                        <img src="images/updated gallery/photo_2_2026-09-03_22-33-38.jpg"
+                            alt="Premium dry cleaning for high-end garments">
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="300">
                     <div class="showcase-card">
-                        <img src="images/advantages/adv3.jpg" alt="Mega Laundry Showcase 3">
-                        <div class="hover-overlay">
-                            <i class="flaticon-t-shirt"></i>
-                        </div>
+                        <img src="images/updated gallery/photo_3_2026-09-03_22-33-38.jpg"
+                            alt="Garments restored to a brilliant shine">
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="400">
                     <div class="showcase-card">
-                        <img src="images/advantages/adv4.jpg" alt="Mega Laundry Showcase 4">
-                        <div class="hover-overlay">
-                            <i class="flaticon-washing-machine-1"></i>
-                        </div>
+                        <img src="images/updated gallery/photo_4_2026-09-03_22-33-38.jpg"
+                            alt="Pillow cleaning with free pickup and delivery">
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="500">
                     <div class="showcase-card">
-                        <img src="images/advantages/adv5.jpg" alt="Mega Laundry Showcase 5">
-                        <div class="hover-overlay">
-                            <i class="flaticon-tumble-dryer"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="showcase-card">
-                        <img src="images/advantages/adv6.jpg" alt="Mega Laundry Showcase 6">
-                        <div class="hover-overlay">
-                            <i class="flaticon-clean-clothes"></i>
-                        </div>
+                        <img src="images/updated gallery/photo_5_2026-09-03_22-33-38.jpg"
+                            alt="Premium fabric care for every garment">
                     </div>
                 </div>
             </div>
@@ -510,38 +496,6 @@
         </div> <!-- end of container -->
     </footer> <!-- end of footer -->
 
-    <div class="news-letter-popup">
-        <div class="wrapper" data-aos="zoom-in" data-aos-duration="1200">
-            <div class="container">
-                <div class="row">
-                    <button class="close"><i class="fa fa-close"></i></button>
-                    <div class="img-wrap col col-sm-3 col-md-4">
-                        <img src="images/water1.png" alt>
-                    </div>
-                    <div class="col col-sm-9 col-md-8">
-                        <div>
-                            <h2>Download "Mega Laundry" App Now</h2>
-                            <p>We are at your fingertips, Order your laundry now</p>
-
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <a href="https://play.google.com/store/apps/details?id=com.megalaundryae.orderapp"
-                                        target="_blank">
-                                        <img src="images/android.png" style="margin-left: 0px;"></a>
-                                </div>
-                                <div class="form-group">
-                                    <a href="https://itunes.apple.com/ae/app/mega-laundry-abu-dhabi/id1218413012?mt=8"
-                                        target="_blank">
-                                        <img src="images/ios.png" style="margin-left: 20px;"></a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end of wrapper -->
-    </div> <!-- news-letter-popup -->
-
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -552,13 +506,13 @@
     <script src="js/common-script.js"></script>
     <script src="js/about-script.js?v=2"></script>
 
-    <!-- Modern AOS Library JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 450,
+            easing: 'ease-out',
             once: true,
-            offset: 100
+            offset: 60
         });
     </script>
 

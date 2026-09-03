@@ -2,16 +2,10 @@ $(function () {
     'use strict';
 
     /*--------------------------------------------------------------
-        Preloder fadeout and newsletter popup
+        Preloder fadeout
     --------------------------------------------------------------*/
     $(window).load(function () {
-        $(".pre-loder").delay(500).fadeOut('slow', function () {
-            var newsLetterPopup = $('.news-letter-popup');
-            newsLetterPopup.css({
-                'visibility': 'visible',
-                'opacity': 1
-            });
-        });
+        $(".pre-loder").delay(500).fadeOut('slow');
     });
 
 
@@ -318,24 +312,6 @@ $(function () {
                     'opacity': 0
                 });
                 return false;
-            });
-            return false;
-        });
-    }());
-
-
-
-    /*--------------------------------------------------------------
-        News letter Popup box close
-    --------------------------------------------------------------*/
-    (function () {
-        var newsLetterPopUpBox = $('.news-letter-popup'),
-            closeBtn = $('.news-letter-popup .close');
-
-        closeBtn.on('click', function () {
-            newsLetterPopUpBox.css({
-                'visibility': 'hidden',
-                'opacity': 0
             });
             return false;
         });

@@ -15,6 +15,28 @@ h6,
     font-family: 'Outfit', sans-serif !important;
 }
 
+/* A single quiet scroll reveal keeps the page feeling cohesive. */
+#home-1 [data-aos] {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) !important;
+    transition-property: opacity, transform !important;
+    transition-duration: 450ms !important;
+    transition-delay: 0ms !important;
+}
+
+#home-1 [data-aos].aos-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #home-1 [data-aos] {
+        opacity: 1;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
 /* ── Logo Sizing ── */
 /* Navbar logo */
 header .navbar-brand img {
@@ -172,18 +194,17 @@ header .search-wrapper button {
 /* Modern Buttons */
 .btn-default,
 .btn-primary {
-    border-radius: 30px !important;
+    border-radius: 4px !important;
     text-transform: uppercase;
     font-weight: 600 !important;
     letter-spacing: 1px;
-    transition: all 0.3s ease !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-default:hover,
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
 /* Hero Section Modernization */
@@ -197,14 +218,14 @@ header .search-wrapper button {
 #main-hero .title h2 {
     font-size: 4rem;
     font-weight: 800;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 #main-hero .title p {
     font-size: 1.5rem;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 4px;
     display: inline-block;
 }
 
@@ -237,10 +258,42 @@ header .search-wrapper button {
     background: #fff;
 }
 
+@media (min-width: 768px) {
+    .about-resort > .row {
+        display: flex;
+        margin: 0;
+    }
+
+    .about-resort .about,
+    .about-resort .resort {
+        display: flex;
+        padding: 0;
+    }
+
+    .about-resort .modern-about-container,
+    .about-resort .modern-resort-showcase {
+        flex: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-resort > .row {
+        display: block !important;
+        margin: 0;
+    }
+
+    .about-resort .about,
+    .about-resort .resort {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+}
+
 .modern-resort-showcase {
     position: relative;
     width: 100%;
-    height: 600px;
+    min-height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -258,9 +311,7 @@ header .search-wrapper button {
     z-index: 0;
 }
 
-.modern-resort-showcase:hover img {
-    transform: scale(1.1);
-}
+#home-1 .modern-resort-showcase:hover img { transform: none; }
 
 .showcase-overlay {
     position: absolute;
@@ -274,19 +325,21 @@ header .search-wrapper button {
 
 .modern-resort-showcase .title {
     position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    top: auto !important;
+    right: 38px;
+    bottom: 38px;
+    left: 38px !important;
     z-index: 5;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    padding: 30px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 24px;
-    width: 80% !important;
-    min-width: 280px;
+    padding: 22px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-left: 3px solid #8dc63f;
+    background: rgba(12, 24, 35, 0.72);
+    backdrop-filter: blur(8px);
+    border-radius: 6px;
+    width: auto !important;
+    min-width: 0;
     box-sizing: border-box;
 }
 
@@ -301,24 +354,24 @@ header .search-wrapper button {
 }
 
 .laundry-badge {
-    background: #494b46;
+    background: transparent;
     color: #fff;
-    padding: 6px 18px;
-    border-radius: 50px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     display: inline-block;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(141, 198, 63, 0.3);
+    margin-bottom: 12px;
 }
 
 .modern-resort-showcase .title h2 {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
     color: #fff;
 }
 
@@ -336,11 +389,18 @@ header .search-wrapper button {
 
 @media (max-width: 768px) {
     .modern-resort-showcase {
-        height: 450px;
+        min-height: 420px;
+    }
+
+    .modern-resort-showcase .title {
+        right: 22px;
+        bottom: 22px;
+        left: 22px !important;
+        padding: 18px;
     }
 
     .modern-resort-showcase .title h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 }
 
@@ -657,21 +717,19 @@ header .search-wrapper button {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 45px 30px;
-    border-radius: 28px;
+    border-radius: 8px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     height: 100%;
-    backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
 .feature-item-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.05);
     border-color: #8dc63f;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .icon-bubble {
@@ -687,8 +745,7 @@ header .search-wrapper button {
 }
 
 .feature-item-card:hover .icon-bubble {
-    background: #8dc63f;
-    transform: rotate(15deg);
+    background: rgba(141, 198, 63, 0.2);
 }
 
 .feature-item-card i::before {
@@ -699,8 +756,7 @@ header .search-wrapper button {
 }
 
 .feature-item-card:hover i::before {
-    color: #fff;
-    transform: scale(1.1);
+    color: #8dc63f;
 }
 
 .feature-item-card h3 {
@@ -747,7 +803,7 @@ header .search-wrapper button {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: all 0.4s ease;
-    height: 450px;
+    aspect-ratio: 3 / 4;
     background: #fff;
 }
 
@@ -781,14 +837,11 @@ header .search-wrapper button {
     display: inline-block;
 }
 
-.showcase-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 82, 204, 0.25);
+#home-1 .showcase-card:hover {
+    box-shadow: 0 9px 24px rgba(0, 82, 204, 0.16);
 }
 
-.showcase-card:hover img {
-    transform: scale(1.1);
-}
+#home-1 .showcase-card:hover img { transform: none; }
 
 .showcase-card:hover .hover-overlay {
     opacity: 1;
@@ -810,9 +863,8 @@ header .search-wrapper button {
     border: none;
 }
 
-.advantages .row:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+#home-1 .advantages .row:hover {
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.06);
 }
 
 .advantage-details .icon i {
@@ -1193,33 +1245,21 @@ footer .copyright span {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    animation: waAttention 2.8s ease-in-out infinite;
 }
 
 .whatsapp-float .wa-btn:hover {
-    transform: scale(1.15) rotate(-5deg);
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.65);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.58);
     color: white;
 }
 
 /* Pulse animation ring */
 .whatsapp-float .wa-btn::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.4);
-    animation: waPulse 2s ease-out infinite;
+    display: none;
 }
 
 .whatsapp-float .wa-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(37, 211, 102, 0.25);
-    animation: waPulse 2s ease-out 0.5s infinite;
+    display: none;
 }
 
 @keyframes waPulse {
@@ -1231,6 +1271,32 @@ footer .copyright span {
     100% {
         transform: scale(1.9);
         opacity: 0;
+    }
+}
+
+@keyframes waAttention {
+    0%,
+    70%,
+    100% {
+        transform: scale(1);
+    }
+
+    78% {
+        transform: scale(1.1);
+    }
+
+    86% {
+        transform: scale(0.96);
+    }
+
+    93% {
+        transform: scale(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float .wa-btn {
+        animation: none;
     }
 }
 
@@ -1374,8 +1440,7 @@ footer .copyright span {
 /* ─── ABOUT (index about-resort section) ─── */
 @media (max-width: 768px) {
     .about-resort .row {
-        flex-direction: column !important;
-        display: flex;
+        display: block !important;
     }
 
     .about-resort .about,
@@ -1385,6 +1450,7 @@ footer .copyright span {
 
     .about-resort .resort {
         min-height: 280px !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -1950,18 +2016,26 @@ footer .copyright span {
     }
 }
 
-/* 4. INDEX: Hero slides — better mobile height */
-@media (max-width: 576px) {
+/* 4. INDEX: Hero occupies the viewport beneath the 90px mobile header */
+@media (max-width: 768px) {
     #home-1 .hero .item {
-        height: 520px !important;
-        min-height: 520px !important;
+        height: calc(100vh - 90px) !important;
+        height: calc(100svh - 90px) !important;
+        min-height: calc(100vh - 90px) !important;
+        min-height: calc(100svh - 90px) !important;
     }
-}
 
-@media (max-width: 400px) {
-    #home-1 .hero .item {
-        height: 480px !important;
-        min-height: 480px !important;
+    #main-hero>a {
+        position: absolute !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: 25px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    #home-1 .about-resort {
+        margin-top: 0 !important;
     }
 }
 
