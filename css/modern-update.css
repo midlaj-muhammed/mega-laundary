@@ -2002,8 +2002,9 @@ footer .copyright span {
         font-size: 0.9rem !important;
     }
 
-    /* Explore button — centered perfectly */
-    #main-hero a.btn {
+    /* Explore button follows the order booking line */
+    #main-hero .hero-explore-btn {
+        position: static !important;
         height: 46px !important;
         padding: 0 24px !important;
         display: inline-flex !important;
@@ -2011,8 +2012,8 @@ footer .copyright span {
         justify-content: center !important;
         line-height: normal !important;
         font-size: 0.85em !important;
-        bottom: 25px !important;
-        /* Slightly more clearance */
+        margin-top: 6px;
+        transform: none !important;
     }
 }
 
@@ -2023,15 +2024,6 @@ footer .copyright span {
         height: calc(100svh - 90px) !important;
         min-height: calc(100vh - 90px) !important;
         min-height: calc(100svh - 90px) !important;
-    }
-
-    #main-hero>a {
-        position: absolute !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: 25px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
     }
 
     #home-1 .about-resort {
